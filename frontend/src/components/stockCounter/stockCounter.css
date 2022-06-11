@@ -1,0 +1,22 @@
+.sell_Stock_Show{
+display: flex;
+border-bottom:2px solid rgb(0, 189, 19); 
+height: 70px;
+width: auto;
+justify-content: space-evenly   ;
+align-items: center;
+}
+.sell_Stock_Show > div{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: auto;
+ width: auto;
+}
+.sell_Stock_Show >div> h2{
+ margin: 0px;
+}
+.BTN{
+ height: 40px;
+ width: 80px;
+}
