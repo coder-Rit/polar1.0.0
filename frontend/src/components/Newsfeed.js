@@ -59,7 +59,7 @@ function Newsfeed({ stockVal }) {
             {
               stockdata.stockDatareducer.stocks.map((data, index) => {
                 if (data.quantity > 0) {
-                  return <ShowStocks key={index} fullData={data} data={data.quantity * data.value} quantity={data.quantity} id={index}></ShowStocks>
+                  return <ShowStocks cureentVal={stockVal} key={index} fullData={data} data={data.quantity * data.value} quantity={data.quantity} id={index}></ShowStocks>
                 }
               })
 

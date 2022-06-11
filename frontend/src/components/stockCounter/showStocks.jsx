@@ -21,34 +21,57 @@ const ShowStocks = (props) => {
    disPatch(select_stock(props.fullData))
     disPatch(set_sell_amount(props.quantity))
   }
-  
+
+
+  const cond =()=>{
+    if ( props.cureentVal<props.fullData.value) {
+      return "red"
+    }
+    else{
+      return "rgb(102, 255, 0)"
+    }
+  }
+
+
+  console.log(props);
   return (
     <>  
-                <div  className='sell_Stock_Show'   >
+    { 
+       <div  className='sell_Stock_Show'     >
                   <div>
                     <h2>AAPL</h2>
                   </div>
-                  <div>
-                    <h1>{toIndianCurrency(props.data)}</h1> 
+                  <div style={{
+                    display:'flex',
+                    flexDirection:'column'
+                  }}>
+                    <h1>{toIndianCurrency(props.data*props.cureentVal)}</h1> 
+                    
                   </div>
                   <div>
-                    <p>{props.fullData.quantity}   </p>
+                    <p>{props.fullData.quantity}Q</p>
 
                   </div>
                     <div> 
-                    <p>{props.fullData.value}</p>
+                    <p>₹{props.fullData.value}</p>
                     </div>
 
                     <Button variant="contained" className='BTN' onClick={()=>func()}  id={props.id} style={{
                     borderRadius: 5,
-                    backgroundColor: "#66ff00",
+                    backgroundColor:cond(),
                     fontSize: "18px",
-                    color: 'black'
-                }} >Sell</Button>
+                    color: 'black',
+                    transition: "0.5s"
+                     
+                }
+                 } >Sell</Button>
 
                     
                 </div> 
-     </>
+
+}
+</>
+     
   )
 }
 

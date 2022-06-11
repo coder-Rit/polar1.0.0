@@ -1,6 +1,5 @@
 .sell_Stock_Show{
-display: flex;
-border-bottom:2px solid rgb(0, 189, 19); 
+display: flex; 
 height: 70px;
 width: auto;
 justify-content: space-evenly   ;
